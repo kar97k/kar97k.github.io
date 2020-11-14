@@ -4,4 +4,69 @@
     <meta charset="UTF-8">
     <title>Лабораторная 1: Регулярные грамматики и конечные автоматы</title>
 </head>
+<style>
+    html, body {
+        height: 100%;
+    }
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+    }
+    #confirm {
+        margin-left: 20px;
+    }
+    #input {
+        width: 250px;
+    }
+    #log {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    #log > div {
+        margin-top: 10px;
+    }
+    #image {
+        background-image: url(pic.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 700px;
+        height: 555px;
+    }
+    #rules {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        font-weight: bold;
+        align-items: center;
+    }
+    #info-wrapper {
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+    }
+</style>
+<body>
+<div id="info-wrapper">
+    <div id="image">
+    </div>
+    <div id="rules">
+        <div> G → a | Ga</div>
+        <div> F → Fa | Gb</div>
+        <div> FK → Fb | FGb | FKGb</div>
+        <div> FG → FKa | FKGa | FGa</div>
+        <div> FKG → FKb</div>
+        <div> S→ F* | FG* | FK* | FKG*</div>
+    </div>
+</div>
+<div class="wrapper">
+    <input id="input" type="text" placeholder="Введите цепочку языка"/>
+    <button id="confirm">Вычислить</button>
+</div>
+<div id="log"></div>
+<script src="./code.js"></script>
+</body>
 </html>
